@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block title %}Home{% endblock title %} {%block body %}
+
+<h1>{{ title }}</h1>
+<p>{{ message }}</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">sn</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Occupation</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for person in people %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ person.name }}</td>
+            <td>{{ person.age }}</td>
+            <td>{{ person.occupation }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock body %}
