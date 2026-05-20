@@ -27,9 +27,7 @@
             <td>{{ receipe.time }}</td>
             <td>{{ receipe.level }}</td>
             <td>
-                <button class="btn btn-danger">
-                    <a href="/receipe/delete/{{receipe.id}}"> delete </a>
-                </button>
+                <a href="/receipe/delete/{{receipe.id}}"> <button class="btn btn-danger">delete</button></a>
             </td>
         </tr>
         {% endfor %}
