@@ -1,37 +1,39 @@
 {% extends "base.html" %} {% block title %}Home{% endblock title %} {%block body %}
 
-<h1>{{ title }}</h1>
-<p>{{ message }}</p>
+<div class="container p-3">
+    <h1>{{ title }}</h1>
+    <p>{{ message }}</p>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">sn</th>
-            <th scope="col">name</th>
-            <th scope="col">description</th>
-            <th scope="col">ingredients</th>
-            <th scope="col">time</th>
-            <th scope="col">level</th>
-            <th scope="col">delete</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for receipe in receipes %}
-        <tr>
-            <td>
-                <a href="/receipe/{{receipe.id}}"> {{ receipe.id }} </a>
-            </td>
-            <td>{{ receipe.name }}</td>
-            <td>{{ receipe.description }}</td>
-            <td>{{ receipe.ingredients }}</td>
-            <td>{{ receipe.time }}</td>
-            <td>{{ receipe.level }}</td>
-            <td>
-                <a href="/receipe/delete/{{receipe.id}}"> <button class="btn btn-danger">delete</button></a>
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">sn</th>
+                <th scope="col">name</th>
+                <th scope="col">description</th>
+                <th scope="col">ingredients</th>
+                <th scope="col">time</th>
+                <th scope="col">level</th>
+                <th scope="col">delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for receipe in receipes %}
+            <tr>
+                <td>
+                    <a href="/receipe/{{receipe.id}}"> {{ receipe.id }} </a>
+                </td>
+                <td>{{ receipe.name }}</td>
+                <td>{{ receipe.description }}</td>
+                <td>{{ receipe.ingredients }}</td>
+                <td>{{ receipe.time }}</td>
+                <td>{{ receipe.level }}</td>
+                <td>
+                    <a href="/receipe/delete/{{receipe.id}}"> <button class="btn btn-danger">delete</button></a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 
 {% endblock body %}
